@@ -1,0 +1,9 @@
+Name				Entity ID				Integration	Area
+
+vblinds rail                    cover.vblinds_rail			Soma Connect	Living Room
+vblinds rail battery level	sensor.vblinds_rail_battery_level	Soma Connect	Living Room
+vblinds tilt			cover.vblinds_tilt			Soma Connect	Living Room
+vblinds tilt battery level	sensor.vblinds_tilt_battery_level	Soma Connect	Living Room
+SomaTilt1			cover.somatilt1				Soma Connect	Living Room
+SomaTilt1 battery level		sensor.somatilt1_battery_level		Soma Connect	Living Room
+
