@@ -5,11 +5,11 @@
 ## Casus
 
 ### Background
-We have 3 Soma devices: https://www.somasmarthome.com/  
-The tree devices are a [Soma Tilt](https://www.somasmarthome.com/pages/smart-tilt) and two [Soma Smart Shades 2](https://www.somasmarthome.com/).
+We have 3 Soma devices: https://www.somasmarthome.com/ 
+The three devices are a [Soma Tilt](https://www.somasmarthome.com/pages/smart-tilt) and two [Soma Smart Shades 2](https://www.somasmarthome.com/).
 
 
-These are connected through a [Soma Connect](https://www.somasmarthome.com/products/soma-connect-blinds-control-for-amazon-alexa-apple-homekit-google-home) which is basically a Raspberry Pi. On another Pi is running [Home Assistant](https://www.home-assistant.io/) as a [Docker](https://www.docker.com/) container. It is linked to the Soma Connect using [Soma Connect Integration](https://www.home-assistant.io/integrations/soma/).
+These are connected through a [Soma Connect](https://www.somasmarthome.com/products/soma-connect-blinds-control-for-amazon-alexa-apple-homekit-google-home) which is basically a Raspberry Pi. Another Pi is running [Home Assistant](https://www.home-assistant.io/) as a [Docker](https://www.docker.com/) container. It is linked to the Soma Connect using [Soma Connect Integration](https://www.home-assistant.io/integrations/soma/).
 
 ### App(s)
 Soma provides an App through the Apple and Google App-Stores called [Smart Shades](https://play.google.com/store/apps/details?id=com.wazombi.RISE). I think it can be improved a great deal, but it seems to do it's primary job: link devices to the Soma Connect and configure them. The most important settings are the minimal and maximal positions of the devices which defines if shades are open or closed.
@@ -24,8 +24,8 @@ A huge difference between the two apps to control Soma devices is:
 On several occasions I noticed the HA app reporting the shades were either in the minimum or maximum position resulting in the associated arrow/button being greyed out. However this was not true in reality. The Soma Shades app did also not report the device to be in the maximum or minimum position.
 
 #### Resulting issues
-* One would expect the HA and Soma App to be in sync and to be able to use them at will although resorting to a single one (the HA one) is the goal.
-* The shades might nor be able to be fully opened or closed using the HA App
+* One would expect the HA and Soma App to be in sync. So one can to use them at will although resorting to a single one (the HA one) is the goal.
+* The shades might not be able to be fully opened or closed using the HA App.
 * If the shades are fully opened or closed, but the app things they are not it can still send a 'move command' to adjust the position although this is not desirable.
 * I implemented this Home Automation system to aid someone with multiple [Rheumatic disorders](https://en.wikipedia.org/wiki/Rheumatism) so it has to be reliable as the person controlling the system can not always be sure what their hands will do. You want the body to be the only possible culprit, not the system, as that way the automation becomes a problem and not an aid.
 
@@ -73,3 +73,7 @@ You guessed it: the script reads all it can from the Soma devices using the HA R
 ## Results
 
 We now can run both **soma.sh** and **soma-ha.sh** to see if the values match, And they do not. But it will take a series of runs and physical adjustments (moving of shades) to actually come to reliable conclusions.
+
+## Further testing
+When on site I can test and see the physical position and compare it to values retrieved using both the HA REST API and the Soma REST API. In theory they should all match.
+In the meantime I created a flowchart using Mermaid. It can be found in a separate MarkDown file. Mermaid is sadly still not supported by Github.
