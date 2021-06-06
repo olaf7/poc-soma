@@ -1,8 +1,8 @@
 graph LR
-    A[Soma Smart Shades App] --> B[Soma Connect]
-    B --> C[Soma Tilt or Shades]
+    A[Soma Smart Shades App] --> |WiFI| B[Soma Connect]
+    B --> |BLE| C[Soma Tilt or Shades]
         
-    D[Home Assistant App] --> E[Home Assistant]
+    D[Home Assistant App] --> |WiFi| E[Home Assistant]
     E --> F[Soma HA Integration]
     F --> B
 
