@@ -6,6 +6,6 @@ graph LR
     E --> F[Soma HA Integration]
     F --> B
 
-    G[Python script 2] -->|Soma REST API| B
+    G[Python script : soma.sh] -->|Soma REST API| B
 
-    H[Python script 1] -->|HA REST API| E
+    H[Python script : soma-ha.sh] -->|HA REST API| E
