@@ -77,3 +77,8 @@ We now can run both **soma.sh** and **soma-ha.sh** to see if the values match, A
 ## Further testing
 When on site I can test and see the physical position and compare it to values retrieved using both the HA REST API and the Soma REST API. In theory they should all match.
 In the meantime I created a flowchart using Mermaid. It can be found in a separate MarkDown file. Mermaid is sadly still not supported by Github.
+
+### compare.sh
+Comparison of values retrieved through the Home Assistant REST API and directly through the Soma REST API. Next it set the test device in a position and rereads positional values both ways.
+This script reads the MAC-adddress (Soma Connect layout) and EntityID (Home Assistant style) of a SOMA device from file and performs some tests. It reports back on the results.
+Fully configurable.
