@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # (c) Olaf Zevenboom 2021
-# version : 0.2
+# version : 0.3
 # MIT License
 # use at own risk
 
@@ -8,6 +8,7 @@ import requests
 import sys
 import json
 import time
+import argparse
 
 HA_BEARER_FILE = "bearer.txt"
 SOMA_DEV_FILE = "mac.txt"
@@ -25,7 +26,15 @@ SERVER_HOMEASSISTANT_BEARER_FILE="bearer.txt"
 SERVER_HOMECONNECT="192.168.178.22"
 SERVER_HOMECONNECT_PORT=3000
 
-POSITION=60 # position % of open state of device
+#POSITION=60 # position % of open state of device
+
+parser = argparse.ArgumentParser(description="POC position reading/write Soma Connect & Home Assistant")
+parser.add_argument('-p', '--position', nargs='?', type=int, default=60, help="position value")
+args = parser.parse_args()
+POSITION = args.position
+
+#print("Position: %d" % POSITION)
+#exit(0)
 
 print("Welcome to the Soma Connect positional comparison analyzer POC")
 

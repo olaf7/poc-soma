@@ -3,6 +3,7 @@
 
 
 ## Casus
+See also this reported issue: https://github.com/home-assistant/core/issues/50782
 
 ### Background
 We have 3 Soma devices: https://www.somasmarthome.com/ 
@@ -69,7 +70,6 @@ The other is the **entries.txt** file which is documented above.
 
 You guessed it: the script reads all it can from the Soma devices using the HA REST API and prints it to screen.
 
-
 ## Results
 
 We now can run both **soma.sh** and **soma-ha.sh** to see if the values match, And they do not. But it will take a series of runs and physical adjustments (moving of shades) to actually come to reliable conclusions.
@@ -81,4 +81,14 @@ In the meantime I created a flowchart using Mermaid. It can be found in a separa
 ### compare.sh
 Comparison of values retrieved through the Home Assistant REST API and directly through the Soma REST API. Next it set the test device in a position and rereads positional values both ways.
 This script reads the MAC-adddress (Soma Connect layout) and EntityID (Home Assistant style) of a SOMA device from file and performs some tests. It reports back on the results.
-Fully configurable.
+
+Python script whoch reads and sets position of a Soma device:
+* read position value of Soma device using Soma REST API
+* read position value of Soma device using Home Assistant REST API
+* set position value of Soma device using Soma REST API
+* read position value of Soma device using Soma REST API
+* read position value of Soma device using Home Assistant REST API
+* report on values so we can compare and see what is going on
+In theory both APIs should report the same value, but do they?
+See the source. Fully configurable. Sensitive configuration info is in separate files.
+The positional value has a configurable default value, but can also be set by providing an argument to the scipt: -p <VALUE> or --position <VALUE>
