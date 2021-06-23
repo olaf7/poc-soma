@@ -116,11 +116,14 @@ if response.status_code != 200:
     exit(1)
 print("OK")
 data = json.loads(response.text)
+#print(data)
+hadev_state = data['state']
 hadev_entityid1 = data['entity_id']
 hadev_attributes1 = data['attributes']
 hadev_last_changed1 = data['last_changed']
 hadev_last_updated1 = data['last_updated']
 hadev_position1 = data['attributes'].get('current_position')
+print("State : %s" % hadev_state)
 
 # SET POSITION of device (Soma Connect)
 # https://support.somasmarthome.com/hc/en-us/articles/360026064234-HTTP-API
