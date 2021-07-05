@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
+# (c) Olaf Zevenboom 2021
+# version 0.1
+# MIT License
+# use at own risk
 
 import requests
 import json
 
-SomaConnect="192.168.178.22"
+SomaConnect="192.168.178.116"
 SomaConnectPort=3000
 
 # https://support.somasmarthome.com/hc/en-us/articles/360026064234-HTTP-API
